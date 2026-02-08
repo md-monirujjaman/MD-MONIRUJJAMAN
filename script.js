@@ -9,36 +9,26 @@ const typed = new Typed('.text-animate', {
 
 // mobile navbar start
 
-/* === এই অংশটুকু আগের কোড মুছে দিয়ে বসান === */
+// ১. ক্লাসগুলো সিলেক্ট করা
+const menu = document.querySelector('.navbar-menu');
+const menuBtn = document.querySelector('.navbar-toggle');
 
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-
-// ১. মেনু টগল (ক্লিক করলে মেনু আসবে এবং আইকন 'X' হবে)
-menuIcon.onclick = () => {
-    menuIcon.querySelector('i').classList.toggle('bx-x'); // Close icon toggle
-    navbar.classList.toggle('active'); // মেনু স্লাইড toggle
-};
-
-// ২. মেনুর লিংকে ক্লিক করলে মেনু অটো বন্ধ হয়ে যাবে
-let navLinks = document.querySelectorAll('.navbar a');
-
-navLinks.forEach(link => {
-    link.onclick = () => {
-        menuIcon.querySelector('i').classList.remove('bx-x');
-        navbar.classList.remove('active');
-    };
+// ২. হ্যামবার্গার আইকনে ক্লিক করলে মেনু ওপেন/ক্লোজ হবে
+menuBtn.addEventListener('click', function() {
+    menu.classList.toggle('active');      // মেনু স্লাইড করে আনবে
+    menuBtn.classList.toggle('is-active'); // আইকনটিকে X এ পরিণত করবে
 });
 
-// ৩. স্ক্রল করলে হেডার স্টিকি হবে এবং খোলা মেনু বন্ধ হবে
-window.onscroll = () => {
-    let header = document.querySelector('.header');
-    header.classList.toggle('sticky', window.scrollY > 100);
+// ৩. (অপশনাল) মেনুর কোনো লিংকে ক্লিক করলে মেনু অটোমেটিক বন্ধ হয়ে যাবে
+// এটি মোবাইল ইউজারদের জন্য খুব সুবিধাজনক
+const navLinks = document.querySelectorAll('.navbar-links, .letstalkbtn');
 
-    // স্ক্রল করলে অটোমেটিক মেনু বন্ধ করার জন্য
-    menuIcon.querySelector('i').classList.remove('bx-x');
-    navbar.classList.remove('active');
-};
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        menuBtn.classList.remove('is-active');
+    });
+});
 // mobile nabar end
 
 // Mobile Navbar Toggle
@@ -79,26 +69,88 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // common question start
 
-function toggleFaq(element) {
-    // Shudhu ekta ekebare open thakbe (Optional)
-    const allItems = document.querySelectorAll('.faq-item');
-    allItems.forEach(item => {
-        if (item !== element) item.classList.remove('active');
-    });
+const containers = document.querySelectorAll('.container');
 
-    // Current item toggle
-    element.classList.toggle('active');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.2 });
+
+containers.forEach(container => observer.observe(container));
+
+// education and certificate end
+
+
+// curser animtation start
+
+const trailContainer = document.getElementById('magic-trail-container');
+
+window.addEventListener('mousemove', (e) => {
+    // একবারে ৩টি করে পার্টিকেল তৈরি হবে যাতে ট্রেইলটি ঘন (Dense) মনে হয়
+    for (let i = 0; i < 3; i++) {
+        createParticle(e.clientX, e.clientY);
+    }
+});
+
+function createParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.className = 'magic-particle';
+    
+    // মাউসের পজিশনে সামান্য র‍্যান্ডম পরিবর্তন যাতে ট্রেইলটি ন্যাচারাল লাগে
+    const offset = (Math.random() - 0.5) * 10;
+    particle.style.left = (x + offset) + 'px';
+    particle.style.top = (y + offset) + 'px';
+    
+    // র‍্যান্ডম সাইজ (কিছু বড়, কিছু ছোট)
+    const size = Math.random() * 6 + 2 + 'px';
+    particle.style.width = size;
+    particle.style.height = size;
+
+    trailContainer.appendChild(particle);
+
+    // ১.৫ সেকেন্ড পর পার্টিকেলটি রিমুভ করা
+    setTimeout(() => {
+        particle.remove();
+    }, 1500);
 }
 
-// common question end
 
+// curser animation end
 
-// popup massage start
+// review section start
 
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    loop: false, // এটি আপাতত false করে দিন কারণ আপনার স্লাইড সংখ্যা কম
+    slidesPerView: "auto",
+    speed: 800,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0, // এটি -100 থেকে কমিয়ে 0 করুন, অনেক সময় নেগেটিভ ভ্যালু ক্রোম নিতে পারে না
+        depth: 100,
+        modifier: 2.5,
+        slideShadows: false,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    }
+});
 
-
-// popup massage end
-
+// review section end
 
 // ai chatbot start
 // ১. ডাটা এবং কনফিগুরেশন

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Logo-Animation-Section-css-start -->
  
     <style>
@@ -21,7 +22,7 @@
             flex-direction: column;
             min-height: 100vh;
             background-color: #0f172a;
-            overflow: hidden;
+           
         }
 
         /* Logo Animation Section */
@@ -169,25 +170,48 @@
     <!-- Logo-Animation-Section-End -->
 
     <!-- Main-Content-Section-Start -->
-    <header class="header">
-    <a href="#" class="logo">MONIRU<span>JJAMAN</span></a>
-
-    <div id="menu-icon">
-        <i class='bx bx-menu'></i>
-    </div>
-
     <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#servicebar">Service</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-        
-        <a href="https://wa.me/8801407752887" target="_blank" class="lets-talk-btn">Let's Talk</a>
+        <div class="navbar-container">
+            <a href="#home" class="navbar-logo"><span style="color: white;">MONIRU</span>JJAMAN</a>
+            
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="#home" class="navbar-links active">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#about" class="navbar-links">About</a>
+                </li>
+                
+                <li class="navbar-item">
+                    <a href="#skills" class="navbar-links">Skills</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#projects" class="navbar-links">Project</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="#servicebar" class="navbar-links">Services</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#blog" class="navbar-links">Blog</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#contact" class="navbar-links">Contact</a>
+                </li>
+
+                <a href="https://wa.me/8801407752887" target="_blank" 
+              class="letstalkbtn" >Let's Talk
+               </a>
+            </ul>
+        </div>
     </nav>
-</header>
 
     <!-- Main-Content-Section-End -->
     
@@ -195,13 +219,12 @@
         <div class="home-content">
             <h3 style="font-size: 20px;">Hello, It's Me</h3>
             <h1>MD MONIRU<span style="color: #00abf0;">JJAMAN</span></h1>
-            <h3 style="font-size: 15px;">And I'm a <span style="color:#00abf0 ;" class="text-animate"></span></h3>
-            <p style="font-size: 15px;">I build high-performance, responsive web applications using the MERN stack. Expert in React.js and modern web architectures.</p>
-            
-             <a href="image/MD MONIRUJJAMAN CV.pdf" download="My_CV" class="btn">Resume</a>
-
-            <a href="#contact" class="btn">Hire Me</a>
-
+            <h3 style="font-size: 15px;">And I'm a <span style="color:#00abf0 ; font-size: 18px; "  class="text-animate"></span></h3>
+            <p style="font-size: 15px;" class="textcolorwhite">I build high-performance, responsive web applications using the MERN stack. Expert in React.js and modern web architectures.</p>
+           <div class="pg-hero-btns">
+    <a href="#contact" class="pg-btn-primary">Hire Me</a>
+    <a href="image/MD MONIRUJJAMAN CV.pdf" class="pg-btn-secondary">Resume</a>
+</div>
         </div>
         
         <!-- PROTFOLIO-PCITURE-Background/Animation-Start -->
@@ -271,79 +294,154 @@ I love solving problems and turning a blank canvas into a functional, revenue-ge
 
 <!-- SLIDER-ANIMATION-End -->
 
-<!-- review slider start -->
+<!-- education and certificate start -->
 
-<section class="review-section">
-    <div class="container">
-        <h4 class="sub-title">What My <span style="color: white;">Clients Say</span></h4>
-        <h2 class="main-title">Client <span class="textcolors">Reviews</span> </h2>
+<section class="timeline-section">
+    <h2 class="section-title">Education & <span class="textcolorblue">Certificates</span></h2>
+    <div class="timeline">
+        <div class="center-line"></div>
 
-        <div class="slider-wrapper">
-            <div class="review-slider">
-                <div class="review-card">
-                    <div class="client-info">
-                       <img src="image/female image.jpg" alt="Client">
-                        <div class="details">
-                            <h3>Riya khan</h3>
-                            <p>CEO, Tech Solution</p>
-                        </div>
-                    </div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">Monirujjaman is an excellent developer. His work on our frontend was professional and delivered on time. Highly recommended!</p>
-                </div>
+        <div class="container left">
+            <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="content">
+                <span class="date">2021 - 2023</span>
+                <h3>SSC (Science)</h3>
+                <p>Khulna Zilla Police School</p>
+                <p>GPA 5.00 | Jashore Board</p>
+            </div>
+        </div>
 
-                <div class="review-card">
-                    <div class="client-info">
-                       <img src="image/male.jpg" alt="Client">
-                        <div class="details">
-                        <h3>Micele smith</h3>
-                            <p>Founder, Startup Hub</p>
-                        </div>
-                    </div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">Great communication and high-quality code. He really understood our requirements for the database design.</p>
-                </div>
+        <div class="container right">
+            <div class="icon"><i class="fas fa-code"></i></div>
+            <div class="content">
+                <span class="date">June 2023 - Dec 2023</span>
+                <h3>Database Programming</h3>
+                <p>6 Months Professional Course</p>
+                <p>Dhaka Curriculum Board</p>
+            </div>
+        </div>
 
-                <div class="review-card">
-                    <div class="client-info">
-                       <img src="image/male 2.jpg" alt="Client">
-                        <div class="details">
-                            <h3>Michael Tan</h3>
-                            <p>Manager, Global IT</p>
-                        </div>
-                    </div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">The full-stack application Monir built for us is fast, secure, and very easy to use. Exceptional work!</p>
-                </div>
+        <div class="container left">
+            <div class="icon"><i class="fas fa-university"></i></div>
+            <div class="content">
+                <span class="date">2023 - 2025</span>
+                <h3>HSC (Science)</h3>
+                <p>Govt. BL College, Khulna</p>
+                <p>GPA 3.58 | Jashore Board</p>
+            </div>
+        </div>
 
-                <div class="review-card">
-                    <div class="client-info">
-                        <img src="image/female image.jpg" alt="Client">
-                        <div class="details">
-                            <h3>Anika Rahman</h3>
-                            <p>Marketing Head, Creative Agency</p>
-                        </div>
-                    </div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">Working with MD Monirujjaman was a pleasure. He made our portfolio website look modern and responsive.</p>
-                </div>
+        <div class="container right">
+            <div class="icon"><i class="fas fa-tools"></i></div>
+            <div class="content">
+                <span class="date">Oct 2025 - Dec 2025</span>
+                <h3>IT Support Service (L-3)</h3>
+                <p>ASSET Project (3 Months)</p>
+            </div>
+        </div>
 
-                <div class="review-card">
-                    <div class="client-info">
-                       <img src="image/male 2.jpg" alt="Client">
-                        <div class="details">
-                            <h3>John Doe</h3>
-                            <p>CEO, Tech Solution</p>
-                        </div>
-                    </div>
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">Monirujjaman is an excellent developer. His work on our frontend was professional and delivered on time!</p>
-                </div>
+        <div class="container left">
+            <div class="icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="content">
+                <span class="date">Jan 2026 - Present</span>
+                <h3>Freelancing (Batch-05)</h3>
+                <p>Bangladesh DYD (3 Months)</p>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="icon"><i class="fas fa-user-graduate"></i></div>
+            <div class="content">
+                <span class="date">2026 - Present</span>
+                <h3>B.Sc in CSE</h3>
+                <p>JUST (1st Semester)</p>
+                <p>Jashore University of Science and Technology</p>
             </div>
         </div>
     </div>
 </section>
 
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- education and certificate end -->
+
+
+<!-- review slider start -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section class="testimonial-section">
+    <h2 class="title">Client <span>Review</span></h2>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+                <div class="card-box">
+                    <div class="pic-area"><img src="image/female image.jpg" alt="user"></div>
+                    <div class="name-company"><h4>Sophia Reynolds</h4><p>CEO, Nexus Digital</p></div>
+                    <div class="review-box"><p>"He transformed our brand's vision into a stunning digital reality. The performance is flawless, and the UI is incredibly intuitive. A perfect balance of technical skill and aesthetics."</p></div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-box">
+                    <div class="pic-area"><img src="image/male 2.jpg" alt="male 1st"></div>
+                    <div class="name-company"><h4>David Miller</h4><p>Founder, Startup Hub</p></div>
+                    <div class="review-box"><p>"A top-tier developer who knows how to scale a vision. He built a high-performance web app that is both secure and fast. The attention to mobile responsiveness was exceptional."</p></div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-box">
+                    <div class="pic-area"><img src="image/female 2.jpg" alt="user"></div>
+                    <div class="name-company"><h4>Elena Rodriguez</h4><p>Head of Marketing, Bloom</p></div>
+                    <div class="review-box"><p>"Working with him was seamless. I am impressed by how accurately he brought our designs to life. The animations add a premium feel to the site. Highly recommended for modern UI/UX."</p></div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-box">
+                    <div class="pic-area"><img src="image/male.jpg" alt="male2"></div>
+                    <div class="name-company"><h4>Liam Johnson</h4><p>CTO, Innovate Inc.</p></div>
+                    <div class="review-box"><p>"His technical depth is impressive. The website is visually stunning and technically robust. His ability to optimize performance makes him a standout professional in the field."</p></div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-box">
+                    <div class="pic-area"><img src="image/female 3.jpg" alt="female  3"></div>
+                    <div class="name-company"><h4>Aisha Malik</h4><p>Product Manager, TechSphere</p></div>
+                    <div class="review-box"><p>"Our site's engagement improved significantly after the launch. The layout is clean, professional, and perfectly optimized for all devices. He is a reliable partner for any web project."</p></div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-box">
+                    <div class="pic-area"><img src="image/man  3.jpg" alt="male3"></div>
+                    <div class="name-company"><h4>Ethan Davis</h4><p>Operations Manager, LogiCorp</p></div>
+                    <div class="review-box"><p>"Reliability and expertise define his work. He delivered a complex portal with zero bugs and a smooth user experience. He is a true problem-solver who takes ownership of his work."</p></div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-box">
+                    <div class="pic-area"><img src="image/female 4.webp" alt="female4"></div>
+                    <div class="name-company"><h4>Isabella Smith</h4><p>Creative Director, Design Wave</p></div>
+                    <div class="review-box"><p>"His code quality is outstanding—well-organized and easy to maintain. He handled complex integrations effortlessly and delivered ahead of the deadline. Truly a professional developer."</p></div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- review slider end -->
 
 <!-- project-section-start -->
@@ -409,8 +507,8 @@ I love solving problems and turning a blank canvas into a functional, revenue-ge
 
    <section class="services-section" id="servicebar">
     <div class="container">
-        <h4 class="sub-title"> <span class="textcolors">What</span> I Offer</h4>
-        <h2 class="main-title">My <span class="textcolors">Services</span> </h2>
+        <h4 class="sub-title"> <span class="textcolorblue">What</span> I Offer</h4>
+        <h2 class="main-title">My <span class="textcolorblue">Services</span> </h2>
 
         <div class="services-grid">
             <div class="service-card">
@@ -481,7 +579,7 @@ I love solving problems and turning a blank canvas into a functional, revenue-ge
 <section class="blog-section" id="blog">
     <div class="container">
         <h4 class="sub-title"> <span style="color: #00abf0;">What</span> I Write</h4>
-        <h2 class="main-title">Latest <span class="textcolors"> Blog Post</span> </h2>
+        <h2 class="main-title">Latest <span class="textcolorblue"> Blog Post</span> </h2>
 
         <div class="blog-grid">
             <div class="blog-card">
@@ -527,7 +625,14 @@ I love solving problems and turning a blank canvas into a functional, revenue-ge
                     <p>Discover the reasons behind the development of my unique Nuxt starter kit tailored for SaaS products.</p>
                 </div>
             </div>
+            
         </div>
+<div class="pg-blog-wrapper">
+    <a href="blog.html" class="pg-crystal-btn">
+        <span>Explore All Blogs</span>
+        <div class="pg-btn-dot"></div>
+    </a>
+</div>
     </div>
 </section>
 
@@ -621,28 +726,24 @@ I love solving problems and turning a blank canvas into a functional, revenue-ge
         <option value="elite">Elite: Full Stack Development</option>
     </select> 
                     </div>
-                    <textarea cols="30" rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
+                    <textarea cols="30" rows="10" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="pg-send-btn" >Send Message</button>
                 </form>
             </div>
         </div>
     </section>
     <!-- contact-fromm-End -->
 
-    <!-- <div style="text-align: center;" class="social-media">
-                <a href="#"><i class="fab fa-facebook-f icon-wold"></i></a>
-                <a href="#"><i class="fab fa-github icon-wold"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in icon-wold"></i></a>
-            </div> -->
-
+    
 <!-- footer section -->
 
  <footer class="main-footer">
     <div class="footer-container">
         
         <div class="footer-section branding">
-            <h2 class="footer-name">MD MONIRU<span style="color: #00abf0;">JJAMAN</span></h2> <p style="font-size: 17px;">Full Stack Web Developer</p>
-            <p style="font-size: 15px;">📍 Khulna-9100, Bangladesh</p>
+            <h2 class="footer-name">MD MONIRU<span style="color: #00abf0;">JJAMAN</span></h2>
+             <p class="textcolorwhite" style="font-size: 17px;">Full Stack Web Developer</p>
+            <p class="textcolorwhite" style="font-size: 15px;">📍 Khulna-9100, Bangladesh</p>
         </div>
 
         <div class="footer-section links">
@@ -685,14 +786,14 @@ I love solving problems and turning a blank canvas into a functional, revenue-ge
         Hi, I am <strong>Aethera</strong>. How can I help you?
     </div>
 
-    <div id="chat-button" onclick="toggleChat()">   <img src="image/Aethera Ai.png" alt="ai logo" id="bot-icon">
+    <div id="chat-button" onclick="toggleChat()">   <img src="image/bot-logo.png" alt="ai logo" id="bot-icon">
         <span id="notification-dot" class="hidden"></span>
     </div>
 
     <div id="chat-window" class="hidden">
         <div class="chat-header">
             <div class="header-info">
-                <img src="image/Aethera Ai.png" alt="AI">
+                <img src="image/bot-logo.png" alt="AI">
                 <div class="status-info">
                     <span class="bot-name">Aethera Assistant</span>
                     <span class="status">Online</span>
@@ -723,7 +824,13 @@ I love solving problems and turning a blank canvas into a functional, revenue-ge
   }
 </script>
 
+<!-- curser animation start -->
+<div id="magic-trail-container"></div>
+
+<!-- curser animation end -->
+
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

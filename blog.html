@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blogs - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #00abf0;
+            --bg-color: #081b29;
+            --second-bg-color: #112e42;
+            --text-color: #ededed;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        h2 span { color: var(--main-color); }
+
+        /* Blog Grid Layout */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: var(--second-bg-color);
+            border: 2px solid var(--main-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px var(--main-color);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            background: #222;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--main-color);
+        }
+
+        .blog-content p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Full Blog View Section */
+        #full-blog-view {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--main-color);
+            color: var(--bg-color);
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .full-blog-content img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer Button Style */
+        .view-all-btn {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            padding: 12px;
+            text-align: center;
+            background: transparent;
+            color: var(--main-color);
+            border: 2px solid var(--main-color);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.5s;
+            text-decoration: none;
+        }
+
+        .view-all-btn:hover {
+            background: var(--main-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--main-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div id="blog-list-section">
+        <h2>Latest <span>Blogs</span></h2>
+        <div class="blog-grid" id="blog-grid">
+            <div class="blog-card" onclick="openBlog('blog1')">
+                <img src="https://via.placeholder.com/400x250/112e42/00abf0?text=Nuxt+Starter+Kit" class="blog-img" alt="Blog Image">
+                <div class="blog-content">
+                    <h3>Nuxt Starter Kit - Web Development</h3>
+                    <p>Learn how to setup a professional Nuxt project with optimized features...</p>
+                </div>
+            </div>
+
+            <div class="blog-card" onclick="openBlog('blog2')">
+                <img src="https://via.placeholder.com/400x250/112e42/00abf0?text=Spring+Boot+API" class="blog-img" alt="Blog Image">
+                <div class="blog-content">
+                    <h3>Building Microservices with Spring</h3>
+                    <p>A complete guide to creating scalable backend systems using Spring Boot...</p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="view-all-btn">View All Blogs</a>
+    </div>
+
+    <div id="full-blog-view">
+        <div class="back-btn" onclick="closeBlog()">← Back to Blogs</div>
+        <div class="full-blog-content" id="full-content">
+            </div>
+    </div>
+
+</div>
+
+<script>
+    // ব্লগের ডাটা (এটি আপনি পরবর্তীতে বাড়াতে পারবেন)
+    const blogData = {
+        blog1: {
+            title: "Nuxt Starter Kit - Development Process",
+            image: "https://via.placeholder.com/800x400/112e42/00abf0?text=Nuxt+Full+Details",
+            content: `
+                <p>Today we are exploring the latest features of Nuxt 3. This starter kit includes RSS feeds, custom layouts, and pre-built components to speed up your development process.</p>
+                <p>The development process starts with setting up the environment variables and installing the necessary dependencies...</p>
+                <h3>Features Included:</h3>
+                <ul>
+                    <li>SEO Optimized Meta Tags</li>
+                    <li>Global State Management</li>
+                    <li>Custom API Fetching layer</li>
+                </ul>
+            `
+        },
+        blog2: {
+            title: "Building Microservices with Spring",
+            image: "https://via.placeholder.com/800x400/112e42/00abf0?text=Spring+Full+Details",
+            content: `
+                <p>Spring Boot is a powerful framework for building backend services. In this blog, we discuss how to manage messaging between services.</p>
+                <p>We use Spring Cloud Config and Netflix Eureka for service discovery...</p>
+            `
+        }
+    };
+
+    function openBlog(id) {
+        const blog = blogData[id];
+        const contentDiv = document.getElementById('full-content');
+        
+        contentDiv.innerHTML = `
+            <h1>${blog.title}</h1>
+            <img src="${blog.image}" alt="">
+            <div>${blog.content}</div>
+        `;
+
+        document.getElementById('blog-list-section').style.display = 'none';
+        document.getElementById('full-blog-view').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function closeBlog() {
+        document.getElementById('blog-list-section').style.display = 'block';
+        document.getElementById('full-blog-view').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
